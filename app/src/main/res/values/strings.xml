@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="text1">0</string>
+    <string name="c">C</string>
+    <string name="percent">%</string>
+    <string name="divide">/</string>
+    <string name="bot_7">7</string>
+    <string name="bot_8">8</string>
+    <string name="bot_9">9</string>
+    <string name="bot_4">4</string>
+    <string name="bot_5">5</string>
+    <string name="bot_6">6</string>
+    <string name="bot_minus">-</string>
+    <string name="bot_1">1</string>
+    <string name="bot_2">2</string>
+    <string name="bot_3">3</string>
+    <string name="bot_plus">+</string>
+    <string name="bot_0">0</string>
+    <string name="bot_demi">.</string>
+    <string name="bot_equals">=</string>
 </resources>
