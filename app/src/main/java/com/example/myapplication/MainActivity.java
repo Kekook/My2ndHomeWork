@@ -1,15 +1,18 @@
 package com.example.myapplication;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.view.View;
 import android.widget.Button;
 
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+    private int number = 0 ;
     private TextView text1;
     Button button0;
     Button button1;
@@ -22,11 +25,19 @@ public class MainActivity extends AppCompatActivity {
     Button button8;
     Button button9;
     Button buttonC;
+    Button butDemi;
     double num1 = 0;
     double num2 = 0;
     double result = 0;
     int op = 0;
 
+
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("number_key",number);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +55,10 @@ public class MainActivity extends AppCompatActivity {
         button8 = (Button) findViewById(R.id.bot_8);
         button9 = (Button) findViewById(R.id.bot_9);
         buttonC = (Button) findViewById(R.id.botC);
+        butDemi = (Button) findViewById(R.id.bot_demi);
+        if(savedInstanceState != null && savedInstanceState.containsKey("number_key")){
+            number = savedInstanceState.getInt("number_key");
+        }
 
         button1.setOnClickListener( new mClick());
         button2.setOnClickListener( new mClick());
@@ -56,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
         button9.setOnClickListener( new mClick());
         button0.setOnClickListener( new mClick());
         buttonC.setOnClickListener( new mClick());
+        butDemi.setOnClickListener( new mClick());
 
 
     }
@@ -117,6 +133,11 @@ public class MainActivity extends AppCompatActivity {
                     String str0 = text1.getText().toString();
                     str0 += "0";
                     text1.setText(str0);
+                    break;
+                case R.id.bot_demi:
+                    String strDemi = text1.getText().toString();
+                    strDemi += ".";
+                    text1.setText(strDemi);
                     break;
 
 
